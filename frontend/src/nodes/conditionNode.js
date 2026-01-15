@@ -1,5 +1,4 @@
 import BaseNode from "./BaseNode";
-import "../styles/inputNode.css";
 
 export const ConditionNode = ({ id }) => {
   return (

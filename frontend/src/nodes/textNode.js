@@ -1,38 +1,28 @@
-// textNode.js
-import { useState } from 'react';
-import { Handle, Position } from 'reactflow';
-import '../styles/textNode.css';
+import { useState } from "react";
+import BaseNode from "./BaseNode";
 
 export const TextNode = ({ id, data }) => {
-  const [currText, setCurrText] = useState(data?.text || '{{input}}');
-
-  const handleTextChange = (e) => {
-    setCurrText(e.target.value);
-  };
+  const [currText, setCurrText] = useState(data?.text || "{{input}}");
 
   return (
-    <div className="text-node-wrapper">
-      <div className="text-node-header">
-        <span>📝 Text</span>
-      </div>
-      <div className="text-node-content">
-        <label className="text-node-label">
-          Text:
-          <input 
-            type="text" 
-            value={currText} 
-            onChange={handleTextChange}
-            className="text-node-input"
-            placeholder="Enter text..."
-          />
-        </label>
-      </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-output`}
-        className="text-node-handle"
-      />
-    </div>
+    <BaseNode
+      id={id}
+      title="Text"
+      icon="📝"
+      inputs={["input"]}
+      outputs={["output"]}
+      className="input-node-wrapper"
+    >
+      <label className="node-label">
+        Text:
+        <input
+          type="text"
+          value={currText}
+          onChange={(e) => setCurrText(e.target.value)}
+          className="node-input"
+          placeholder="Enter text..."
+        />
+      </label>
+    </BaseNode>
   );
 };

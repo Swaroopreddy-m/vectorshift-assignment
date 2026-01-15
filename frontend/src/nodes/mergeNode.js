@@ -1,5 +1,6 @@
+//mergeNode
 import BaseNode from "./BaseNode";
-import "../styles/inputNode.css";
+import "../styles/BaseNode.css";
 
 export const MergeNode = ({ id }) => {
   return (
