@@ -1,0 +1,114 @@
+.text-node-wrapper {
+  width: 240px;
+  min-height: 100px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(124, 58, 237, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.text-node-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  border-radius: 16px 16px 0 0;
+}
+
+.text-node-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 48px rgba(124, 58, 237, 0.25),
+    0 4px 16px rgba(0, 0, 0, 0.15);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.text-node-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: #7c3aed;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.text-node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text-node-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.text-node-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(124, 58, 237, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.text-node-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  transform: translateY(-1px);
+}
+
+.text-node-input::placeholder {
+  color: #9ca3af;
+}
+
+.text-node-handle {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  border: 2px solid white;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .text-node-wrapper {
+    width: 200px;
+    min-height: 90px;
+    padding: 14px;
+  }
+  
+  .text-node-header {
+    font-size: 13px;
+  }
+  
+  .text-node-input {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-node-wrapper {
+    width: 180px;
+    min-height: 80px;
+    padding: 12px;
+  }
+}
