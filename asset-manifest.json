@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/vectorshift-assignment/static/css/main.69cc77e6.css",
-    "main.js": "/vectorshift-assignment/static/js/main.ebc6e1d4.js",
+    "main.css": "/vectorshift-assignment/static/css/main.559cf0f2.css",
+    "main.js": "/vectorshift-assignment/static/js/main.10811dc8.js",
     "index.html": "/vectorshift-assignment/index.html",
-    "main.69cc77e6.css.map": "/vectorshift-assignment/static/css/main.69cc77e6.css.map",
-    "main.ebc6e1d4.js.map": "/vectorshift-assignment/static/js/main.ebc6e1d4.js.map"
+    "main.559cf0f2.css.map": "/vectorshift-assignment/static/css/main.559cf0f2.css.map",
+    "main.10811dc8.js.map": "/vectorshift-assignment/static/js/main.10811dc8.js.map"
   },
   "entrypoints": [
-    "static/css/main.69cc77e6.css",
-    "static/js/main.ebc6e1d4.js"
+    "static/css/main.559cf0f2.css",
+    "static/js/main.10811dc8.js"
   ]
 }
