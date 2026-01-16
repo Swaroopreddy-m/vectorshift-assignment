@@ -2,11 +2,9 @@ To start react js
 
 npm start
 
-To start py
+To start python
 
-
-
-C:\Users\Sahithi Reddy\Downloads\WORK\drive-download-20260112T133839Z-1-001\backend>
+C:...\backend>
 
 py -m uvicorn main:app --reload --port 8080
 
@@ -14,3 +12,20 @@ py -m uvicorn main:app --reload --port 8080
 To check version 
 
 py --version
+
+To add to git 
+
+in root dir 
+
+> git init
+> git add .
+> git push
+ 
+
+To add to pages
+
+in frontend
+
+\vectorshift-assignment>cd frontend
+\vectorshift-assignment\frontend>npm run deploy
+
