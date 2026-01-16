@@ -1,36 +1,18 @@
-// llmNode.js
-import { Handle, Position } from 'reactflow';
-import '../styles/llmNode.css';
+import BaseNode from "./BaseNode";
 
-export const LLMNode = ({ id, data }) => {
+export const LLMNode = ({ id }) => {
   return (
-    <div className="llm-node-wrapper">
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-system`}
-        className="node-handle"
-        style={{ top: '25%' }}
-      />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        className="node-handle"
-        style={{ top: '75%' }}
-      />
-      <div className="node-header">
-        <span>🤖 LLM</span>
-      </div>
-      <div className="llm-description">
+    <BaseNode
+      id={id}
+      title="LLM"
+      icon="🤖"
+      inputs={["system", "prompt"]}
+      outputs={["response"]}
+      className="input-node-wrapper"
+    >
+      <div style={{ fontSize: "13px", color: "#6b7280" }}>
         Large Language Model
       </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-        className="node-handle"
-      />
-    </div>
+    </BaseNode>
   );
 };

@@ -1,5 +1,6 @@
+//BaseNode
+
 import { Handle, Position, useReactFlow } from "reactflow";
-import "../styles/draggableNode.css";
 
 export default function BaseNode({
   id,
@@ -40,6 +41,7 @@ export default function BaseNode({
           id={id}
           type="target"
           position={Position.Left}
+          className="custom-handle"
           style={{ top: 60 + i * 22 }}
         />
       ))}
@@ -50,6 +52,7 @@ export default function BaseNode({
           id={id}
           type="source"
           position={Position.Right}
+          className="custom-handle"
           style={{ top: 60 + i * 22 }}
         />
       ))}

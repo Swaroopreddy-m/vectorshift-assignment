@@ -1,39 +1,41 @@
-// outputNode.js
-import { useState } from 'react';
-import { Handle, Position } from 'reactflow';
-import '../styles/outputNode.css';
+import { useState } from "react";
+import BaseNode from "./BaseNode";
 
 export const OutputNode = ({ id, data }) => {
-  const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
-  const [outputType, setOutputType] = useState(data.outputType || 'Text');
-
-  const handleNameChange = (e) => setCurrName(e.target.value);
-  const handleTypeChange = (e) => setOutputType(e.target.value);
+  const [currName, setCurrName] = useState(
+    data?.outputName || id.replace("customOutput-", "output_")
+  );
+  const [outputType, setOutputType] = useState(data?.outputType || "Text");
 
   return (
-    <div className="output-node-wrapper">
-      <Handle type="target" position={Position.Left} id={`${id}-value`} className="node-handle" />
-      <div className="node-header">
-        <span>📤 Output</span>
-      </div>
-      <div className="node-content">
-        <label className="node-label">
-          Name:
-          <input 
-            type="text" 
-            value={currName} 
-            onChange={handleNameChange}
-            className="node-input"
-          />
-        </label>
-        <label className="node-label">
-          Type:
-          <select value={outputType} onChange={handleTypeChange} className="node-select">
-            <option value="Text">Text</option>
-            <option value="File">Image</option>
-          </select>
-        </label>
-      </div>
-    </div>
+    <BaseNode
+      id={id}
+      title="Output"
+      icon="📤"
+      inputs={["value"]}
+      className="input-node-wrapper"
+    >
+      <label className="node-label">
+        Name:
+        <input
+          type="text"
+          value={currName}
+          onChange={(e) => setCurrName(e.target.value)}
+          className="node-input"
+        />
+      </label>
+
+      <label className="node-label">
+        Type:
+        <select
+          value={outputType}
+          onChange={(e) => setOutputType(e.target.value)}
+          className="node-select"
+        >
+          <option value="Text">Text</option>
+          <option value="Image">Image</option>
+        </select>
+      </label>
+    </BaseNode>
   );
 };
